@@ -59,25 +59,17 @@ const displayErr = error =>{
 
 let slideIndex = 0;
 const selectItem = (event, img) => {
-  toggleSelect(true);
+  let element = event.target;
+  element.classList.add('added');
+ 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
   } else {
-    toggleSelect(false);
-    sliders.pull(img);
-  }
-}
-
-const toggleSelect = (show) =>{
-  let element = event.target;
-  if(show){
-    element.classList.add('added');
-  }
-  else{
     element.classList.remove('added');
   }
 }
+
 
 
 
